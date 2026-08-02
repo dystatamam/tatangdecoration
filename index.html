@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tatang_Decoration — Dekorasi Pernikahan & Acara Spesial</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 6C20 6 12 12 12 20C12 27 15.5 32 20 34C24.5 32 28 27 28 20C28 12 20 6 20 6Z" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M20 12C20 12 16 15.5 16 20.5C16 24.5 17.8 27.5 20 29" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+    <span class="brand-name">Tatang_Decoration</span>
+  </div>
+  <button class="hamburger" onclick="document.querySelector('nav.links').classList.toggle('open')">☰</button>
+  <nav class="links">
+    <button class="navlink active" onclick="showPage('home',this)">Beranda</button>
+    <button class="navlink" onclick="showPage('gallery',this)">Galeri</button>
+    <a class="nav-cta" id="navWaBtn" href="#" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.26-8.24a8.2 8.2 0 0 1 5.84 2.42 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.2-8.26 8.2Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+      Pesan Sekarang
+    </a>
+  </nav>
+</header>
+
+<!-- ============ HOME PAGE ============ -->
+<main id="page-home" class="page active">
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">Studio Dekorasi Acara — Sejak 2016</span>
+      <h1>Setiap acara adalah<br><em>gapura</em> menuju cerita baru.</h1>
+      <p class="lead">Tatang_Decoration membantu keluarga di Madura dan sekitarnya merancang dekorasi pernikahan, lamaran, hingga acara adat — dari konsep hingga hari pelaksanaan, ditangani langsung oleh tim yang sama.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="showPage('gallery')">Lihat Galeri Konsep</button>
+        <a class="btn btn-wa" id="heroWaBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.26-8.24a8.2 8.2 0 0 1 5.84 2.42 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.2-8.26 8.2Z"/></svg>
+          Chat via WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="gate-wrap">
+      <svg viewBox="0 0 400 420" fill="none">
+        <path class="gate-draw" d="M60 400 V140 Q60 60 130 50 Q140 30 200 30 Q260 30 270 50 Q340 60 340 140 V400" style="animation-delay:.1s"/>
+        <path class="gate-draw" d="M100 400 V160 Q100 100 150 90" style="animation-delay:.3s"/>
+        <path class="gate-draw" d="M300 400 V160 Q300 100 250 90" style="animation-delay:.3s"/>
+        <path class="gate-draw" d="M150 90 Q200 70 250 90" style="animation-delay:.5s"/>
+        <g>
+          <circle class="gate-petal" cx="130" cy="52" r="7" fill="#C98374" style="animation-delay:1.6s"/>
+          <circle class="gate-petal" cx="270" cy="52" r="7" fill="#C98374" style="animation-delay:1.7s"/>
+          <circle class="gate-petal" cx="200" cy="34" r="8" fill="#B8925A" style="animation-delay:1.8s"/>
+          <circle class="gate-petal" cx="160" cy="92" r="5" fill="#C98374" style="animation-delay:1.9s"/>
+          <circle class="gate-petal" cx="240" cy="92" r="5" fill="#C98374" style="animation-delay:2s"/>
+          <circle class="gate-petal" cx="105" cy="160" r="5" fill="#B8925A" style="animation-delay:2.1s"/>
+          <circle class="gate-petal" cx="295" cy="160" r="5" fill="#B8925A" style="animation-delay:2.2s"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="stats">
+    <div class="stat"><div class="num">1000+</div><div class="lab">Acara ditangani</div></div>
+    <div class="stat"><div class="num">10</div><div class="lab">Tahun pengalaman</div></div>
+    <div class="stat"><div class="num">4</div><div class="lab">Kota jangkauan</div></div>
+    <div class="stat"><div class="num">5</div><div class="lab">Jenis acara</div></div>
+  </div>
+
+  <section class="section" id="layanan">
+    <div class="section-head">
+      <span class="eyebrow">Layanan</span>
+      <h2>Satu tim, untuk setiap momen keluarga</h2>
+      <p>Kami merancang dan memasang dekorasi secara menyeluruh — survei lokasi, konsep, produksi, hingga pembongkaran setelah acara selesai.</p>
+    </div>
+    <div class="services">
+      <div class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V10L12 4L20 10V21"/><path d="M9 21V14H15V21"/></svg>
+        <h3>Pernikahan</h3>
+        <p>Dekorasi akad &amp; resepsi, pelaminan, hingga area foto tamu.</p>
+      </div>
+      <div class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
+        <h3>Lamaran</h3>
+        <p>Konsep intim untuk seserahan dan sesi tukar cincin.</p>
+      </div>
+      <div class="service">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v6M8 8h8l2 4H6l2-4Z"/><path d="M6 12v8h12v-8"/></svg>
+        <h3> Tedak siten/turun tanah</h3>
+        <p>Dekorasi tedak siten/turun tanah.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div>
+      <span class="eyebrow">Tentang Kami</span>
+      <h2 style="margin:12px 0 18px;">Dikerjakan dari studio kecil di Madura</h2>
+      <p>Tatang_Decoration dimulai dari usaha keluarga yang menangani dekorasi pernikahan sederhana di lingkungan sendiri. Sembilan tahun berjalan, kami tetap menjaga cara kerja yang sama: bertemu langsung, mendengar cerita di balik acara, lalu menerjemahkannya menjadi dekorasi yang terasa personal — bukan sekadar mengikuti katalog.</p>
+      <p>Setiap konsep pada galeri kami dibuat khusus untuk mempermudah diskusi awal. Detail akhir seperti warna, bunga, dan tata letak selalu disesuaikan dengan lokasi dan kebutuhan acara Anda.</p>
+    </div>
+    <div class="about-panel">
+      <span class="eyebrow">Cara Kerja</span>
+      <h3>Dari obrolan ke hari-H</h3>
+      <ul class="about-list">
+        <li>Konsultasi konsep &amp; anggaran</li>
+        <li>Survei lokasi acara</li>
+        <li>Produksi &amp; penataan dekorasi</li>
+        <li>Pemasangan H-1 sebelum acara</li>
+        <li>Pendampingan selama acara berlangsung</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="testimoni">
+    <div class="section-head">
+      <span class="eyebrow">Kata Klien</span>
+      <h2>Cerita dari acara yang sudah berjalan</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <p class="quote">"Konsep gapura yang kami pilih dari galeri disesuaikan lagi sesuai warna baju adat kami. Hasilnya pas sekali."</p>
+        <div class="who">Dhea &amp; Bagas — Resepsi, Pamekasan</div>
+      </div>
+      <div class="testi">
+        <p class="quote">"Tim datang H-1, kerja rapi, dan tetap tenang walau lokasi sempit. Acara pernikahan jadi terasa hangat."</p>
+        <div class="who">Keluarga Hartono — Pernikahan, Sampang</div>
+      </div>
+      <div class="testi">
+        <p class="quote">"Dekorasi Siraman ditata detail sekali, sampai ke pita terkecil. Tamu banyak yang tanya siapa dekorasinya."</p>
+        <div class="who">Nadia — Siraman, Sumenep</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Ceritakan acara Anda, kami bantu bentuk konsepnya</h2>
+    <p>Konsultasi awal tidak dipungut biaya — balasan biasanya kurang dari 1 hari.</p>
+    <a class="btn btn-primary" id="ctaWaBtn" href="#" target="_blank" rel="noopener">Chat via WhatsApp</a>
+  </section>
+</main>
+
+<!-- ============ GALLERY PAGE ============ -->
+<main id="page-gallery" class="page">
+  <div class="gallery-head">
+    <span class="eyebrow">Galeri</span>
+    <h1>Konsep dekorasi per jenis acara</h1>
+    <p>Pilih jenis acara untuk melihat contoh konsep. Klik salah satu untuk melihat detail dan menanyakannya langsung lewat WhatsApp.</p>
+  </div>
+
+  <div class="chip-row" id="chipRow"></div>
+  <div class="cat-intro">
+    <h2 id="catTitle"></h2>
+    <span id="catDesc"></span>
+  </div>
+  <div class="grid" id="galleryGrid"></div>
+</main>
+
+<!-- ============ MODAL ============ -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <div class="modal-inner">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-visual" id="modalVisual"></div>
+      <div class="modal-body">
+        <span class="tag" id="modalTag"></span>
+        <h3 id="modalTitle"></h3>
+        <p class="desc" id="modalDesc"></p>
+        <a class="btn btn-wa" id="modalWaBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.26-8.24a8.2 8.2 0 0 1 5.84 2.42 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.2-8.26 8.2Z"/></svg>
+          Tanyakan konsep ini
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <span class="brand-name">Tatang_Decoration</span>
+      <p>Dekorasi pernikahan &amp; acara spesial.<br>Madura, Jawa Timur.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Kontak</h4>
+      <p>WhatsApp: 0822-8066-2066</p>
+      <p>tatangindah2022@gmail.com</p>
+    </div>
+    <div class="foot-col">
+      <h4>Jam Layanan</h4>
+      <p>Senin – Sabtu, 09.00 – 21.00</p>
+      <p>Minggu: konsultasi via WhatsApp</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" id="floatWaBtn" href="#" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.13-2.9-7C17.19 3.03 14.7 2 12.04 2Zm0 18.12h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.35c0-4.54 3.7-8.24 8.26-8.24a8.2 8.2 0 0 1 5.84 2.42 8.19 8.19 0 0 1 2.41 5.83c0 4.55-3.7 8.2-8.26 8.2Zm4.52-6.16c-.25-.12-1.47-.72-1.7-.81-.23-.08-.4-.12-.56.13-.17.25-.65.81-.79.97-.15.17-.29.19-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.66-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg>
+  <span>WhatsApp</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
