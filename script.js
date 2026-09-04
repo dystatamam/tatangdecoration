@@ -1,129 +1,1264 @@
-/* ============ KONFIGURASI ============ */
-// GANTI nomor di bawah ini dengan nomor WhatsApp bisnis Anda (format: kode negara tanpa +, tanpa spasi)
-const WA_NUMBER = "6282280662066";
-const WA_DEFAULT_MSG = "Halo Tatang_Decoration, saya ingin tanya-tanya soal dekorasi acara saya.";
+/* =========================================================
+   KONFIGURASI WHATSAPP
+   ========================================================= */
 
-function waLink(msg){
-  return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
-}
-["navWaBtn","heroWaBtn","ctaWaBtn","floatWaBtn"].forEach(id=>{
-  document.getElementById(id).href = waLink(WA_DEFAULT_MSG);
-});
+   const WA_NUMBER = "6282280662066";
 
-/* ============ NAVIGASI HALAMAN ============ */
-function showPage(name, el){
-  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-  document.getElementById("page-"+name).classList.add("active");
-  document.querySelectorAll(".navlink").forEach(b=>b.classList.remove("active"));
-  if(el){ el.classList.add("active"); }
-  else{
-    document.querySelectorAll(".navlink").forEach(b=>{
-      if(b.textContent.trim()===(name==="home"?"Beranda":"Galeri")) b.classList.add("active");
-    });
-  }
-  document.querySelector("nav.links").classList.remove("open");
-  window.scrollTo({top:0,behavior:"smooth"});
-}
+   const WA_DEFAULT_MSG =
+     "Halo Tatang_Decoration, saya ingin tanya-tanya soal dekorasi acara saya.";
+   
+   function waLink(msg){
+     return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+   }
+   
+   
+   /* =========================================================
+      TOMBOL WHATSAPP
+      ========================================================= */
+   
+   [
+     "navWaBtn",
+     "heroWaBtn",
+     "ctaWaBtn",
+     "floatWaBtn"
+   ].forEach(id => {
+   
+     const el = document.getElementById(id);
+   
+     if(el){
+       el.href = waLink(WA_DEFAULT_MSG);
+     }
+   
+   });
+   
+   
+   /* =========================================================
+      NAVIGASI HALAMAN
+      ========================================================= */
+   
+   function showPage(name, el){
+   
+     document
+       .querySelectorAll(".page")
+       .forEach(p => p.classList.remove("active"));
+   
+     const page =
+       document.getElementById("page-" + name);
+   
+     if(page){
+       page.classList.add("active");
+     }
+   
+     document
+       .querySelectorAll(".navlink")
+       .forEach(b => b.classList.remove("active"));
+   
+     if(el){
+   
+       el.classList.add("active");
+   
+     }else{
+   
+       document
+         .querySelectorAll(".navlink")
+         .forEach(b => {
+   
+           if(
+             b.textContent.trim() ===
+             (name === "home" ? "Beranda" : "Galeri")
+           ){
+             b.classList.add("active");
+           }
+   
+         });
+   
+     }
+   
+     const navLinks =
+       document.querySelector("nav.links");
+   
+     if(navLinks){
+       navLinks.classList.remove("open");
+     }
+   
+     window.scrollTo({
+       top: 0,
+       behavior: "smooth"
+     });
+   
+   }
+   
+   
+   /* =========================================================
+      DATA KATEGORI
+      ========================================================= */
+   
+   const CATEGORIES = [
+   
+     /* =======================================================
+        PERNIKAHAN
+        ======================================================= */
+   
+     {
+       key: "pernikahan",
+   
+       label: "Pernikahan",
+   
+       theme: "#1F3B2C",
+   
+       tint: "#E7EEE7",
+   
+       desc:
+         "Dekorasi akad, resepsi, dan pelaminan. Jika Ingin Lebih Tau banya Konsep Hubungi Lewat WhatsApp",
+   
+       items: [
+   
+         /* ---------------------------------------------------
+            KONSEP 1
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto30.jpeg",
+   
+           title:
+             "Dekorasi Pernikahan 4 meter",
+   
+           tag:
+             "Wedding",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto30.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto31.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto32.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto33.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto34.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto35.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto36.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto37.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto23.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto24.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto25.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto26.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto27.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto28.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto29.jpeg"
+   
+           ]
+   
+         },
+   
+   
+         /* ---------------------------------------------------
+            KONSEP 2
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto52.jpeg",
+   
+           title:
+             "Dekorasi Pernikahan 6 meter",
+   
+           tag:
+             "Wedding",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto52.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto53.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto54.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto55.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto56.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto57.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto58.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto59.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto60.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto61.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto62.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto63.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto64.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto65.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto66.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto67.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto68.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto69.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto70.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto71.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto72.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto73.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto74.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto75.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto49.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto50.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto51.jpeg"
+   
+           ]
+   
+         },
+   
+   
+         /* ---------------------------------------------------
+            KONSEP 3
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto42.jpeg",
+   
+           title:
+             "Dekorasi Pernikahan 5 meter",
+   
+           tag:
+             "wedding",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto42.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto43.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto44.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto45.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto46.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto47.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto48.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto38.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto39.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto40.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto41.jpeg"
 
-/* ============ DATA KATEGORI & KONSEP ============ */
-// Field "img" adalah path ke file foto Anda, taruh di dalam folder images/.
-// Kalau file belum ada / gagal dimuat, kartu akan otomatis menampilkan
-// kotak placeholder berisi nama file yang perlu diisi, jadi tampilan tidak rusak.
-const CATEGORIES = [
-  {
-    key:"pernikahan", label:"Pernikahan", theme:"#1F3B2C", tint:"#E7EEE7",
-    desc:"Dekorasi akad, resepsi, dan pelaminan. Jika Ingin Lebih Tau banya Konsep Hubungi Lewat WhatsApp",
-    items:[
-      {img:"gambar weding/Tunangan dan Pernikahan 4 x 2.5 meter/foto30.jpeg", title:"cokelat mahogani 4 x 2.5 meter", tag:"Akad", desc:"dekorasi pelaminan pernikahan dengan konsep elegan dan mewah. Latar belakang menggunakan kain berwarna cokelat mahogani yang dipadukan dengan rangkaian bunga bernuansa putih, cokelat, oranye, dan merah bata."},
-      {img:"gambar weding/Tunangan dan Pernikahan 6 meter/foto52.jpeg", title:"Dekorasi Modern Elegan 6 meter", tag:"Wedding", desc:"Dekorasi pelaminan bergaya modern minimalis dengan dominasi warna putih, hijau, dan cokelat alami. Latar belakang dihiasi bunga putih, dedaunan kering, serta lampu LED berbentuk oval yang memberikan kesan elegan dan mewah."},
-      {img:"gambar weding/Tunangan dan Pernikahan 5 x 2.5 meter/foto42.jpeg", title:"Nuansa Wayang 5 x 2.5 meter", tag:"Resepsi", desc:"Dekorasi pelaminan mengusung konsep adat tradisional Jawa yang ditandai dengan ornamen gunungan wayang berwarna emas sebagai latar belakang. Dipadukan dengan rangkaian bunga putih dan cokelat serta pencahayaan hangat, dekorasi ini menghadirkan nuansa klasik, megah, dan tetap elegan dengan sentuhan budaya Indonesia."},
-      {img:"gambar weding/Tunangan dan Pernikahan 6 meter/foto57.jpeg", title:"Dekorasi Luxury Glamour 6 meter", tag:"Wedding", desc:"Dekorasi pelaminan bertema luxury glamour dengan perpaduan warna biru, putih, dan krem. Rangkaian bunga berwarna biru dan putih dipadukan dengan lampu gantung kristal serta kain drapery pada langit-langit, menciptakan suasana yang mewah, romantis, dan berkelas. Sofa abu-abu di bagian tengah menjadi pusat perhatian sekaligus area utama untuk prosesi dan sesi foto pengantin."}
-    ]
-  },
-  {
-    key:"lamaran", label:"Lamaran", theme:"#C98374", tint:"#F6E8E4",
-    desc:"Konsep intim untuk sesi seserahan dan tukar cincin. Jika Ingin Lebih Tau banya Konsep Hubungi Lewat WhatsApp",
-    items:[
-      {img:"gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto8.jpeg", title:"Putih Minimalis 3 - 3.5 meter", tag:"Indoor", desc:"Dekorasi pelaminan bertema modern elegan dengan dominasi bunga berwarna oranye, merah, putih, dan hijau. Menggunakan sofa abu-abu sebagai pusat dekorasi, dipadukan dengan pencahayaan hangat serta tanaman hijau di bagian bawah yang memberikan kesan mewah, segar, dan nyaman."},
-      {img:"gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto11.jpeg", title:"Lamaran Hijau Putih 3 - 3.5 meter", tag:"Outdoor", desc:"Dekorasi pelaminan bergaya garden party yang didominasi warna hijau dan putih. Dihiasi berbagai jenis bunga, dedaunan, serta ornamen kipas dekoratif dengan dua kursi putih sebagai tempat duduk pengantin. Konsep ini memberikan suasana alami, segar, dan romantis yang cocok untuk acara di area terbuka."},
-      {img:"gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto16.jpeg", title:"Backdrop Foto Lamran Sederhana 3 - 3.5 meter", tag:"Dokumentasi", desc:"Dekorasi pelaminan dengan tema klasik mewah menggunakan latar kain merah marun yang dipadukan dengan rangkaian bunga berwarna merah muda, merah, putih, dan hijau. Sofa abu-abu di bagian depan serta lampu gantung (chandelier) memberikan kesan elegan dan hangat."}
-    ]
-  },
-  {
-    key:"Tedak siten & Siraman", label:"Tedak siten & Siraman", theme:"#B8925A", tint:"#F3EAD8",
-    desc:"Dekorasi Tedak siten & Siraman. Jika Ingin Lebih Tau banya Konsep Hubungi Lewat WhatsApp",
-    items:[
-      {img:"gambar weding/Siraman 3-5 meter/foto85.jpeg", title:"Siraman 3-5 meter", tag:"Outdoor", desc:"Dekorasi bertema modern garden dengan ornamen lengkung berwarna biru muda yang dipadukan dengan rangkaian bunga merah, merah muda, dan putih. Latar belakang berupa dinding tanaman hijau serta lampu gantung menciptakan suasana segar, elegan, dan romantis. Dekorasi ini cocok digunakan sebagai area prosesi siraman atau spot foto pada acara outdoor."},
-      {img:"gambar weding/Tidak siten atau Turun tanah/foto97.jpeg", title:"Tedak siten minimalis", tag:"Indoor", desc:"Dekorasi untuk prosesi Tedak Siten mengusung konsep minimalis dengan latar pintu kayu tradisional yang dihiasi bunga putih dan hijau. Perpaduan unsur kayu, tanaman, dan pencahayaan hangat memberikan kesan alami, sederhana, namun tetap elegan. Dekorasi ini mencerminkan nuansa budaya Jawa yang hangat dan sakral."},
-      {img:"gambar weding/Siraman 3-5 meter/foto86.jpeg", title:"Siraman 3-5 meter", tag:"Outdoor", desc:"Dekorasi siraman bergaya natural rustic dengan dominasi dedaunan hijau serta rangkaian bunga berwarna oranye, cokelat, merah, dan putih. Lampu gantung bernuansa hangat memperkuat kesan alami dan mewah, sehingga dekorasi ini sangat cocok digunakan sebagai latar prosesi siraman maupun sesi dokumentasi di area terbuka."}
-    ]
-  },
-];
+   
+           ]
+   
+         },
+   
+   
+         /* ---------------------------------------------------
+            KONSEP 4
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Tunangan dan Pernikahan 6 meter/foto57.jpeg",
+   
+           title:
+             "Dekorasi Pernikahan 10 meter",
+   
+           tag:
+             "Wedding",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/dekor 10 meter/foto76.jpeg",
+             "gambar weding/dekor 10 meter/foto77.jpeg",
+             "gambar weding/dekor 10 meter/foto78.jpeg",
+             "gambar weding/dekor 10 meter/foto79.jpeg",
+             "gambar weding/dekor 10 meter/foto80.jpeg",
+             "gambar weding/dekor 10 meter/foto81.jpeg",
+   
+             
+   
+           ]
+   
+         }
+   
+       ]
+   
+     },
+   
+   
+     /* =======================================================
+        LAMARAN
+        ======================================================= */
+   
+     {
+       key: "lamaran",
+   
+       label: "Lamaran",
+   
+       theme: "#C98374",
+   
+       tint: "#F6E8E4",
+   
+       desc:
+         "Konsep intim untuk sesi seserahan dan tukar cincin. Jika Ingin Lebih Tau banya Konsep Hubungi Lewat WhatsApp",
+   
+       items: [
+   
+         /* ---------------------------------------------------
+            KONSEP 1
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto8.jpeg",
+   
+           title:
+             "Putih Minimalis 3 - 3.5 meter",
+   
+           tag:
+             "Indoor/Outdoor",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto8.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto9.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto10.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto11.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto12.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto13.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto14.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto15.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto16.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto17.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto18.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto19.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto20.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto21.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto22.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto7.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto1.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto2.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto3.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto4.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto5.jpeg",
+             "gambar weding/Tunangan dan Pernikahan 3 - 3.5 meter/foto6.jpeg"
+   
+           ]
+   
+         },
+   
+   
+       ]
+   
+     },
+   
+   
+     /* =======================================================
+        TEDAK SITEN & SIRAMAN
+        ======================================================= */
+   
+     {
+       key: "Tedak siten & Siraman",
+   
+       label: "Tedak siten & Siraman",
+   
+       theme: "#B8925A",
+   
+       tint: "#F3EAD8",
+   
+       desc:
+         "Dekorasi Tedak siten & Siraman. Jika Ingin Lebih Tau banya Konsep Hubungi Lewat WhatsApp",
+   
+       items: [
+   
+         /* ---------------------------------------------------
+            KONSEP 1
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Siraman 3-5 meter/foto85.jpeg",
+   
+           title:
+             "Siraman 3-5 meter",
+   
+           tag:
+             "Outdoor",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/Siraman 3-5 meter/foto85.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto86.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto87.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto88.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto89.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto90.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto91.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto76.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto77.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto78.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto79.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto80.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto81.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto82.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto83.jpeg",
+             "gambar weding/Siraman 3-5 meter/foto84.jpeg"
+   
+           ]
+   
+         },
+   
+   
+         /* ---------------------------------------------------
+            KONSEP 2
+            --------------------------------------------------- */
+   
+         {
+           img:
+             "gambar weding/Tidak siten atau Turun tanah/foto97.jpeg",
+   
+           title:
+             "Tedak siten minimalis",
+   
+           tag:
+             "Indoor",
+   
+           desc:
+             "",
+   
+           photos: [
+   
+             "gambar weding/Tidak siten atau Turun tanah/foto92.jpeg",
+             "gambar weding/Tidak siten atau Turun tanah/foto93.jpeg",
+             "gambar weding/Tidak siten atau Turun tanah/foto94.jpeg",
+             "gambar weding/Tidak siten atau Turun tanah/foto95.jpeg",
+             "gambar weding/Tidak siten atau Turun tanah/foto96.jpeg",
+             "gambar weding/Tidak siten atau Turun tanah/foto97.jpeg",
+             "gambar weding/Tidak siten atau Turun tanah/foto98.jpeg"
 
-let activeCat = CATEGORIES[0].key;
-
-/* ============ RENDER FOTO + PLACEHOLDER FALLBACK ============ */
-function visualHtml(it, cat){
-  return `
-    <div class="visual-frame" style="background:${cat.tint};">
-      <img src="${it.img}" alt="${it.title}" loading="lazy"
-           onerror="this.parentElement.classList.add('img-error')">
-      <div class="img-placeholder" style="color:${cat.theme};">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-          <rect x="3" y="6" width="18" height="14" rx="1.5"/>
-          <circle cx="12" cy="13" r="3.4"/>
-          <path d="M8 6l1.2-2h5.6L16 6"/>
-        </svg>
-        <span>Taruh foto di<br><code>${it.img}</code></span>
-      </div>
-    </div>`;
-}
-
-function renderChips(){
-  const row = document.getElementById("chipRow");
-  row.innerHTML = CATEGORIES.map(c=>
-    `<button class="chip ${c.key===activeCat?'active':''}" onclick="selectCategory('${c.key}')">${c.label}</button>`
-  ).join("");
-}
-
-function selectCategory(key){
-  activeCat = key;
-  renderChips();
-  const cat = CATEGORIES.find(c=>c.key===key);
-  document.getElementById("catTitle").textContent = cat.label;
-  document.getElementById("catDesc").textContent = cat.desc;
-  const grid = document.getElementById("galleryGrid");
-  grid.innerHTML = cat.items.map((it,idx)=>`
-    <div class="card" onclick="openModal('${key}', ${idx})">
-      <div class="card-visual">
-        ${visualHtml(it, cat)}
-      </div>
-      <div class="card-body">
-        <span class="tag">${it.tag}</span>
-        <h3>${it.title}</h3>
-        <p>${it.desc}</p>
-      </div>
-    </div>
-  `).join("");
-}
-
-function openModal(catKey, idx){
-  const cat = CATEGORIES.find(c=>c.key===catKey);
-  const it = cat.items[idx];
-  document.getElementById("modalVisual").innerHTML = visualHtml(it, cat);
-  document.getElementById("modalTag").textContent = it.tag + " — " + cat.label;
-  document.getElementById("modalTitle").textContent = it.title;
-  document.getElementById("modalDesc").textContent = it.desc + " Detail warna, bunga, dan ukuran dapat disesuaikan dengan lokasi dan anggaran acara Anda.";
-  document.getElementById("modalWaBtn").href = waLink(
-    "Halo Puspa Dekorasi, saya tertarik dengan konsep \"" + it.title + "\" (" + cat.label + "). Bisa tolong info lebih lanjut?"
-  );
-  document.getElementById("modalOverlay").classList.add("open");
-}
-function closeModal(){
-  document.getElementById("modalOverlay").classList.remove("open");
-}
-document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeModal(); });
-
-/* init */
-renderChips();
-selectCategory(activeCat);
+   
+           ]
+   
+         },
+  
+   
+       ]
+   
+     }
+   
+   ];
+   
+   
+   /* =========================================================
+      KATEGORI AKTIF
+      ========================================================= */
+   
+   let activeCat = CATEGORIES[0].key;
+   
+   
+   /* =========================================================
+      VARIABEL CAROUSEL POPUP
+      ========================================================= */
+   
+   let currentModalCategory = null;
+   
+   let currentModalItem = null;
+   
+   let currentModalPhoto = 0;
+   
+   
+   /* =========================================================
+      VISUAL FOTO
+      ========================================================= */
+   
+   function visualHtml(it, cat){
+   
+     return `
+   
+       <div
+         class="visual-frame"
+         style="background:${cat.tint};"
+       >
+   
+         <img
+           src="${it.img}"
+           alt="${it.title}"
+           loading="lazy"
+           onerror="this.parentElement.classList.add('img-error')"
+         >
+   
+         <div
+           class="img-placeholder"
+           style="color:${cat.theme};"
+         >
+   
+           <svg
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.4"
+           >
+   
+             <rect
+               x="3"
+               y="6"
+               width="18"
+               height="14"
+               rx="1.5"
+             />
+   
+             <circle
+               cx="12"
+               cy="13"
+               r="3.4"
+             />
+   
+             <path
+               d="M8 6l1.2-2h5.6L16 6"
+             />
+   
+           </svg>
+   
+           <span>
+   
+             Taruh foto di<br>
+   
+             <code>${it.img}</code>
+   
+           </span>
+   
+         </div>
+   
+       </div>
+   
+     `;
+   
+   }
+   
+   
+   /* =========================================================
+      RENDER CHIP KATEGORI
+      ========================================================= */
+   
+   function renderChips(){
+   
+     const row =
+       document.getElementById("chipRow");
+   
+     if(!row) return;
+   
+     row.innerHTML =
+   
+       CATEGORIES.map(c => `
+   
+         <button
+           class="chip ${c.key === activeCat ? "active" : ""}"
+           onclick="selectCategory('${c.key}')"
+         >
+   
+           ${c.label}
+   
+         </button>
+   
+       `).join("");
+   
+   }
+   
+   
+   /* =========================================================
+      PILIH KATEGORI
+      ========================================================= */
+   
+   function selectCategory(key){
+   
+     activeCat = key;
+   
+     renderChips();
+   
+     const cat =
+       CATEGORIES.find(c => c.key === key);
+   
+     if(!cat) return;
+   
+   
+     const title =
+       document.getElementById("catTitle");
+   
+     const desc =
+       document.getElementById("catDesc");
+   
+   
+     if(title){
+       title.textContent = cat.label;
+     }
+   
+   
+     if(desc){
+       desc.textContent = cat.desc;
+     }
+   
+   
+     const grid =
+       document.getElementById("galleryGrid");
+   
+     if(!grid) return;
+   
+   
+     grid.innerHTML =
+   
+       cat.items.map(
+   
+         (it, idx) => `
+   
+           <div
+             class="card"
+             onclick="openModal('${cat.key}', ${idx})"
+           >
+   
+             <div class="card-visual">
+   
+               ${visualHtml(it, cat)}
+   
+             </div>
+   
+   
+             <div class="card-body">
+   
+               <span class="tag">
+   
+                 ${it.tag}
+   
+               </span>
+   
+   
+               <h3>
+   
+                 ${it.title}
+   
+               </h3>
+   
+   
+               <p>
+   
+                 ${it.desc}
+   
+               </p>
+   
+             </div>
+   
+           </div>
+   
+         `
+   
+       ).join("");
+   
+   }
+   
+   
+   /* =========================================================
+      MEMBUAT CAROUSEL POPUP
+      ========================================================= */
+   
+   function createModalCarousel(it, cat){
+   
+     const photos =
+       Array.isArray(it.photos) && it.photos.length
+         ? it.photos
+         : [it.img];
+   
+   
+     return `
+   
+       <div class="modal-carousel">
+   
+         <div
+           class="modal-track"
+           id="modalTrack"
+         >
+   
+           ${photos.map((photo, index) => `
+   
+             <div
+               class="modal-slide"
+               data-photo-index="${index}"
+             >
+   
+               <div
+                 class="visual-frame"
+                 style="background:${cat.tint};"
+               >
+   
+                 <img
+                   src="${photo}"
+                   alt="${it.title} - Foto ${index + 1}"
+                   onerror="this.parentElement.classList.add('img-error')"
+                 >
+   
+   
+                 <div
+                   class="img-placeholder"
+                   style="color:${cat.theme};"
+                 >
+   
+                   <svg
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.4"
+                   >
+   
+                     <rect
+                       x="3"
+                       y="6"
+                       width="18"
+                       height="14"
+                       rx="1.5"
+                     />
+   
+                     <circle
+                       cx="12"
+                       cy="13"
+                       r="3.4"
+                     />
+   
+                     <path
+                       d="M8 6l1.2-2h5.6L16 6"
+                     />
+   
+                   </svg>
+   
+   
+                   <span>
+   
+                     Foto ${index + 1}
+   
+                   </span>
+   
+                 </div>
+   
+               </div>
+   
+             </div>
+   
+           `).join("")}
+   
+         </div>
+   
+   
+         ${
+           photos.length > 1
+           ? `
+   
+             <button
+               type="button"
+               class="modal-arrow modal-arrow-prev"
+               onclick="previousModalPhoto(event)"
+               aria-label="Foto sebelumnya"
+             >
+   
+               <span>‹</span>
+   
+             </button>
+   
+   
+             <button
+               type="button"
+               class="modal-arrow modal-arrow-next"
+               onclick="nextModalPhoto(event)"
+               aria-label="Foto berikutnya"
+             >
+   
+               <span>›</span>
+   
+             </button>
+   
+   
+             <div
+               class="modal-counter"
+               id="modalCounter"
+             >
+   
+               1 / ${photos.length}
+   
+             </div>
+   
+           `
+           : ""
+         }
+   
+       </div>
+   
+     `;
+   
+   }
+   
+   
+   /* =========================================================
+      BUKA POPUP
+      ========================================================= */
+   
+   function openModal(catKey, idx){
+   
+     const cat =
+       CATEGORIES.find(c => c.key === catKey);
+   
+     if(!cat) return;
+   
+   
+     const it =
+       cat.items[idx];
+   
+     if(!it) return;
+   
+   
+     currentModalCategory = catKey;
+   
+     currentModalItem = idx;
+   
+     currentModalPhoto = 0;
+   
+   
+     const modalVisual =
+       document.getElementById("modalVisual");
+   
+   
+     if(modalVisual){
+   
+       modalVisual.innerHTML =
+         createModalCarousel(it, cat);
+   
+     }
+   
+   
+     const modalTag =
+       document.getElementById("modalTag");
+   
+     const modalTitle =
+       document.getElementById("modalTitle");
+   
+     const modalDesc =
+       document.getElementById("modalDesc");
+   
+   
+     if(modalTag){
+   
+       modalTag.textContent =
+         it.tag + " — " + cat.label;
+   
+     }
+   
+   
+     if(modalTitle){
+   
+       modalTitle.textContent =
+         it.title;
+   
+     }
+   
+   
+     if(modalDesc){
+   
+       modalDesc.textContent =
+         it.desc +
+         " Detail warna, bunga, dan ukuran dapat disesuaikan dengan lokasi dan anggaran acara Anda.";
+   
+     }
+   
+   
+     const modalWaBtn =
+       document.getElementById("modalWaBtn");
+   
+   
+     if(modalWaBtn){
+   
+       modalWaBtn.href =
+   
+         waLink(
+   
+           "Halo Tatang_Decoration, saya tertarik dengan konsep \"" +
+   
+           it.title +
+   
+           "\" (" +
+   
+           cat.label +
+   
+           "). Bisa tolong info lebih lanjut?"
+   
+         );
+   
+     }
+   
+   
+     const overlay =
+       document.getElementById("modalOverlay");
+   
+   
+     if(overlay){
+   
+       overlay.classList.add("open");
+   
+     }
+   
+   
+     document.body.style.overflow = "hidden";
+   
+   
+     updateModalPhoto();
+   
+   }
+   
+   
+   /* =========================================================
+      UPDATE FOTO POPUP
+      ========================================================= */
+   
+   function updateModalPhoto(){
+   
+     const track =
+       document.getElementById("modalTrack");
+   
+     if(!track) return;
+   
+   
+     track.style.transform =
+       "translateX(-" +
+       (currentModalPhoto * 100) +
+       "%)";
+   
+   
+     const counter =
+       document.getElementById("modalCounter");
+   
+   
+     const cat =
+       CATEGORIES.find(
+         c => c.key === currentModalCategory
+       );
+   
+   
+     if(
+       counter &&
+       cat &&
+       cat.items[currentModalItem]
+     ){
+   
+       const photos =
+         Array.isArray(
+           cat.items[currentModalItem].photos
+         )
+         ? cat.items[currentModalItem].photos
+         : [cat.items[currentModalItem].img];
+   
+   
+       counter.textContent =
+   
+         (currentModalPhoto + 1) +
+   
+         " / " +
+   
+         photos.length;
+   
+     }
+   
+   }
+   
+   
+   /* =========================================================
+      FOTO SEBELUMNYA
+      ========================================================= */
+   
+   function previousModalPhoto(event){
+   
+     if(event){
+   
+       event.stopPropagation();
+   
+       event.preventDefault();
+   
+     }
+   
+   
+     const cat =
+       CATEGORIES.find(
+         c => c.key === currentModalCategory
+       );
+   
+   
+     if(!cat) return;
+   
+   
+     const item =
+       cat.items[currentModalItem];
+   
+   
+     if(!item) return;
+   
+   
+     const photos =
+       Array.isArray(item.photos)
+         ? item.photos
+         : [item.img];
+   
+   
+     if(photos.length <= 1) return;
+   
+   
+     currentModalPhoto--;
+   
+   
+     if(currentModalPhoto < 0){
+   
+       currentModalPhoto =
+         photos.length - 1;
+   
+     }
+   
+   
+     updateModalPhoto();
+   
+   }
+   
+   
+   /* =========================================================
+      FOTO BERIKUTNYA
+      ========================================================= */
+   
+   function nextModalPhoto(event){
+   
+     if(event){
+   
+       event.stopPropagation();
+   
+       event.preventDefault();
+   
+     }
+   
+   
+     const cat =
+       CATEGORIES.find(
+         c => c.key === currentModalCategory
+       );
+   
+   
+     if(!cat) return;
+   
+   
+     const item =
+       cat.items[currentModalItem];
+   
+   
+     if(!item) return;
+   
+   
+     const photos =
+       Array.isArray(item.photos)
+         ? item.photos
+         : [item.img];
+   
+   
+     if(photos.length <= 1) return;
+   
+   
+     currentModalPhoto++;
+   
+   
+     if(
+       currentModalPhoto >= photos.length
+     ){
+   
+       currentModalPhoto = 0;
+   
+     }
+   
+   
+     updateModalPhoto();
+   
+   }
+   
+   
+   /* =========================================================
+      TUTUP MODAL
+      ========================================================= */
+   
+   function closeModal(){
+   
+     const overlay =
+       document.getElementById("modalOverlay");
+   
+   
+     if(overlay){
+   
+       overlay.classList.remove("open");
+   
+     }
+   
+   
+     document.body.style.overflow = "";
+   
+   }
+   
+   
+   /* =========================================================
+      KLIK ESCAPE + KEYBOARD CAROUSEL
+      ========================================================= */
+   
+   document.addEventListener(
+     "keydown",
+     function(e){
+   
+       if(e.key === "Escape"){
+   
+         closeModal();
+   
+         return;
+   
+       }
+   
+   
+       const overlay =
+         document.getElementById("modalOverlay");
+   
+   
+       if(
+         overlay &&
+         overlay.classList.contains("open")
+       ){
+   
+         if(e.key === "ArrowLeft"){
+   
+           previousModalPhoto();
+   
+         }
+   
+   
+         if(e.key === "ArrowRight"){
+   
+           nextModalPhoto();
+   
+         }
+   
+       }
+   
+     }
+   );
+   
+   
+   /* =========================================================
+      SWIPE FOTO DI HP
+      ========================================================= */
+   
+   let touchStartX = 0;
+   
+   let touchEndX = 0;
+   
+   
+   document.addEventListener(
+     "touchstart",
+     function(e){
+   
+       const overlay =
+         document.getElementById("modalOverlay");
+   
+   
+       if(
+         !overlay ||
+         !overlay.classList.contains("open")
+       ){
+   
+         return;
+   
+       }
+   
+   
+       touchStartX =
+         e.changedTouches[0].screenX;
+   
+     },
+     {
+       passive: true
+     }
+   );
+   
+   
+   document.addEventListener(
+     "touchend",
+     function(e){
+   
+       const overlay =
+         document.getElementById("modalOverlay");
+   
+   
+       if(
+         !overlay ||
+         !overlay.classList.contains("open")
+       ){
+   
+         return;
+   
+       }
+   
+   
+       touchEndX =
+         e.changedTouches[0].screenX;
+   
+   
+       const distance =
+         touchEndX - touchStartX;
+   
+   
+       if(Math.abs(distance) < 50){
+   
+         return;
+   
+       }
+   
+   
+       if(distance < 0){
+   
+         nextModalPhoto();
+   
+       }else{
+   
+         previousModalPhoto();
+   
+       }
+   
+     },
+     {
+       passive: true
+     }
+   );
+   
+   
+   /* =========================================================
+      KLIK AREA LUAR MODAL
+      ========================================================= */
+   
+   document.addEventListener(
+     "click",
+     function(e){
+   
+       const overlay =
+         document.getElementById("modalOverlay");
+   
+   
+       if(
+         overlay &&
+         e.target === overlay
+       ){
+   
+         closeModal();
+   
+       }
+   
+     }
+   );
+   
+   
+   /* =========================================================
+      INIT
+      ========================================================= */
+   
+   renderChips();
+   
+   selectCategory(activeCat);
