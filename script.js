@@ -248,7 +248,7 @@
    
          {
            img:
-             "gambar weding/Tunangan dan Pernikahan 6 meter/foto57.jpeg",
+             "gambar weding/dekor 10 meter/foto76.jpeg",
    
            title:
              "Dekorasi Pernikahan 10 meter",
